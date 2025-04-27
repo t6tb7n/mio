@@ -381,9 +381,9 @@ impl SelectorState {
         let mut fds = self.fds.lock().unwrap();
 
         // If there was no caller of `wait` our notification was not removed from the pipe.
-        if sent_notification {
-            self.notify_waker.ack_and_reset();
-        }
+        // if sent_notification {
+            // self.notify_waker.ack_and_reset();
+        // }
 
         let res = f(&mut *fds);
 
